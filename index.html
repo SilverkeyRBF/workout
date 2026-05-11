@@ -8,18 +8,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0a0a0a;
-    --surface: #111111;
-    --surface2: #1a1a1a;
-    --surface3: #222222;
-    --border: #2a2a2a;
-    --accent: #3b9ede;
-    --accent2: #60c0f8;
-    --accent-dim: rgba(59,158,222,0.15);
+    --bg: #f0f4f8;
+    --surface: #ffffff;
+    --surface2: #e8eef4;
+    --surface3: #d8e4ee;
+    --border: #d0dce8;
+    --accent: #1d7ec2;
+    --accent2: #3b9ede;
+    --accent-dim: rgba(29,126,194,0.10);
     --red: #e74c3c;
-    --gold: #f0c040;
-    --text: #f0f0f0;
-    --muted: #888;
+    --gold: #d4960a;
+    --text: #1a2530;
+    --muted: #6b7f92;
     --font-display: 'Barlow Condensed', sans-serif;
     --font-body: 'Barlow', sans-serif;
   }
@@ -36,7 +36,7 @@
 
   /* ─── HEADER ─── */
   header {
-    background: linear-gradient(135deg, #0a0a0a 0%, #0a101a 100%);
+    background: linear-gradient(135deg, #1d5a8a 0%, #1d7ec2 100%);
     border-bottom: 2px solid var(--accent);
     padding: 16px 24px;
     display: flex;
@@ -47,15 +47,15 @@
     z-index: 100;
   }
 
-  .logo {
+  .logo { 
     font-family: var(--font-display);
     font-weight: 900;
     font-size: 28px;
     letter-spacing: 4px;
-    color: var(--accent);
+    color: #ffffff;
     text-transform: uppercase;
   }
-  .logo span { color: var(--text); }
+  .logo span { color: rgba(255,255,255,0.7); }
 
   .header-stats {
     display: flex;
@@ -67,20 +67,20 @@
     font-family: var(--font-display);
     font-size: 13px;
     letter-spacing: 1px;
-    color: var(--muted);
+    color: rgba(255,255,255,0.7);
     text-transform: uppercase;
   }
-  .stat-chip strong { color: var(--accent); font-size: 16px; }
+  .stat-chip strong { color: #ffffff; font-size: 16px; }
 
   .streak-badge {
-    background: var(--accent-dim);
-    border: 1px solid var(--accent);
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
     border-radius: 4px;
     padding: 4px 10px;
     font-family: var(--font-display);
     font-size: 14px;
     font-weight: 700;
-    color: var(--accent);
+    color: #ffffff;
     letter-spacing: 1px;
   }
 
@@ -88,7 +88,7 @@
   nav {
     display: flex;
     background: var(--surface);
-    border-bottom: 1px solid var(--border);
+    border-bottom: 2px solid var(--border);
     overflow-x: auto;
   }
 
@@ -107,7 +107,7 @@
     transition: all 0.2s;
     white-space: nowrap;
   }
-  nav button:hover { color: var(--text); }
+  nav button:hover { color: var(--accent); }
   nav button.active {
     color: var(--accent);
     border-bottom-color: var(--accent);
@@ -172,6 +172,7 @@
     border-radius: 8px;
     padding: 20px;
     margin-bottom: 16px;
+    box-shadow: 0 2px 8px rgba(29,126,194,0.07);
   }
   .card-title {
     font-family: var(--font-display);
@@ -249,7 +250,38 @@
   .tag-nutrition { border-color: var(--gold); color: var(--gold); }
   .tag-recovery { border-color: #a070d0; color: #a070d0; }
 
-  /* ─── COMPLETE BUTTON ─── */
+  /* ─── SET DOTS ─── */
+  .set-dots {
+    display: flex;
+    gap: 6px;
+    margin-top: 6px;
+    flex-wrap: wrap;
+  }
+  .set-dot {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid var(--border);
+    background: var(--surface2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.15s;
+    flex-shrink: 0;
+  }
+  .set-dot:hover { border-color: var(--accent); color: var(--accent); }
+  .set-dot.set-done {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+  }
+  .set-dot.set-done:hover { background: var(--accent2); border-color: var(--accent2); }
+
   .complete-btn {
     width: 100%;
     padding: 16px;
@@ -261,7 +293,7 @@
     font-weight: 900;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: #0a0a0a;
+    color: #ffffff;
     cursor: pointer;
     margin-top: 8px;
     transition: all 0.2s;
@@ -282,8 +314,8 @@
 
   /* ─── REST DAY ─── */
   .rest-card {
-    background: linear-gradient(135deg, var(--surface) 0%, #1a1520 100%);
-    border: 1px solid #a070d0;
+    background: linear-gradient(135deg, #f5f0ff 0%, #ede8f8 100%);
+    border: 1px solid #c8a8e8;
     border-radius: 8px;
     padding: 40px 24px;
     text-align: center;
@@ -318,8 +350,8 @@
   }
   .week-cell:hover { border-color: var(--accent); }
   .week-cell.completed { background: var(--accent-dim); border-color: var(--accent); }
-  .week-cell.today-cell { border-color: var(--accent2); box-shadow: 0 0 12px rgba(198,224,79,0.2); }
-  .week-cell.future { opacity: 0.4; cursor: default; }
+  .week-cell.today-cell { border-color: var(--accent); box-shadow: 0 0 12px rgba(29,126,194,0.25); }
+  .week-cell.future { opacity: 0.65; }
 
   .wc-day {
     font-family: var(--font-display);
@@ -475,7 +507,7 @@
     font-family: var(--font-display);
     font-size: 28px;
     font-weight: 900;
-    color: var(--surface3);
+    color: #c8d8e8;
     width: 32px;
     flex-shrink: 0;
   }
@@ -500,9 +532,8 @@
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 1px;
-    color: #0a0a0a;
+    color: #ffffff;
     background: var(--accent);
-    border-radius: 3px;
     padding: 4px 9px;
     text-decoration: none;
     flex-shrink: 0;
@@ -515,7 +546,7 @@
 
   /* ─── MOTIVATIONAL QUOTE ─── */
   .quote-bar {
-    background: linear-gradient(135deg, #05101a 0%, #0a0a0a 100%);
+    background: linear-gradient(135deg, #e8f4ff 0%, #ddeeff 100%);
     border: 1px solid var(--accent);
     border-radius: 6px;
     padding: 16px 20px;
@@ -536,7 +567,7 @@
     left: 50%;
     transform: translateX(-50%) translateY(80px);
     background: var(--accent);
-    color: #0a0a0a;
+    color: #ffffff;
     padding: 14px 28px;
     border-radius: 6px;
     font-family: var(--font-display);
@@ -550,9 +581,9 @@
   .toast.show { transform: translateX(-50%) translateY(0); }
 
   .week-cell.selected {
-    border-color: var(--accent2);
-    background: rgba(96,192,248,0.12);
-    box-shadow: 0 0 0 2px var(--accent2);
+    border-color: var(--accent);
+    background: var(--accent-dim);
+    box-shadow: 0 0 0 2px var(--accent);
   }
 
   .day-detail-header {
@@ -595,6 +626,26 @@
     color: var(--muted);
     text-transform: uppercase;
   }
+  .video-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-family: var(--font-display);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #ffffff;
+    background: var(--accent);
+    border-radius: 3px;
+    padding: 4px 9px;
+    text-decoration: none;
+    flex-shrink: 0;
+    transition: background 0.2s, transform 0.1s;
+  }
+  .video-link:hover {
+    background: var(--accent2);
+    transform: translateY(-1px);
+  }
 </style>
 </head>
 <body>
@@ -629,6 +680,24 @@
   </div>
 
   <div class="week-progress" id="week-progress-dots"></div>
+
+  <div class="card">
+    <div class="card-title"><span class="icon">🎯</span> Daily Targets</div>
+    <div class="stats-row" style="margin-bottom:0">
+      <div class="stat-box">
+        <div class="stat-num" style="font-size:28px;">160-180g</div>
+        <div class="stat-lbl">Protein</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num" style="font-size:28px;">1900-2000</div>
+        <div class="stat-lbl">Calories</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num" style="font-size:28px;">2-3L</div>
+        <div class="stat-lbl">Water</div>
+      </div>
+    </div>
+  </div>
 
   <div id="today-content"></div>
 
@@ -677,24 +746,6 @@
 
 <!-- ══════════════════════════════════════ NUTRITION PAGE ══════════════════════════════════════ -->
 <div class="page" id="page-nutrition">
-
-  <div class="card">
-    <div class="card-title"><span class="icon">🎯</span> Daily Targets</div>
-    <div class="stats-row" style="margin-bottom:0">
-      <div class="stat-box">
-        <div class="stat-num" style="font-size:28px;">160-180g</div>
-        <div class="stat-lbl">Protein</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-num" style="font-size:28px;">1900-2000</div>
-        <div class="stat-lbl">Calories</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-num" style="font-size:28px;">2-3L</div>
-        <div class="stat-lbl">Water</div>
-      </div>
-    </div>
-  </div>
 
   <div class="nutrition-grid">
     <div class="meal-card">
@@ -751,11 +802,7 @@
     </ul>
   </div>
 
-  <!-- Daily Nutrition Checklist -->
-  <div class="card">
-    <div class="card-title"><span class="icon">✅</span> Today's Nutrition Checklist</div>
-    <ul class="checklist" id="nutrition-checklist"></ul>
-  </div>
+
 
 </div>
 
@@ -764,9 +811,17 @@
 <div class="toast" id="toast"></div>
 
 <script>
-// ══════════════════════════════════════
-// DATA
-// ══════════════════════════════════════
+// ── Muscle images for calendar cells ──
+const IMG_BICEPS = 'data:image/jpeg;base64,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';
+
+// Chest image (Monday)
+const IMG_CHEST = 'data:image/jpeg;base64,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&#43;7lWJuQAQc+4xX4i/Hlbj4WfGDxDeXXFje3m5GXgKNoHP5UAfofeXmpap4Et5bHEknyjbnr04NY+l2Hj6zs0EE1vpvmcFAkcv6kV4n8KPjNY3+jR2aTC4j4xg8c/WvrHR57PV7NZnkXKjIxQB53pth40s/FECajHC9s6ktOhVWzxgbR61854+YnaQC2D6gH+dfV3jzXovDs4tiuSoxjHGK/P3xs&#43;r6XqyxaWjNHBFvfbnjOe/Wge5Z8B&#43;Fr3x9feIrq0h3vqGoStE3ZQNuAePQV4H8YbLV/Bnjq70PWhFp9xE52op9QfX6V9WeDRZ6bpE2p6xdiIeZIEQnJC5PTNePftFaZ4K8YaFp/iLxHeGHVhL5NmRnaFCqMk47ZoA8Kk/0fwrcM&#43;Bcy7Vwe7Z/yKqf8Ir9p8MweHTGPtk43SKw7CuYjtJ9M1CPX7iXzblpkiSMnIVumPwr6jl8DeIda&#43;H8ui6fGLa6VWEUo77jkHigDyb4dWFjCJLDXIVurqFsxp2HbmqvwqsLXxV8XNL0rWbdJ7V7koEYYwwIq7YfCfxzo1raSanAi3UZ2lQfUVkXqyeAtWGu6Bctb3sF3G&#43;0JlduOM0AfVvxO8VnxhJc6da20GmxwSbCilMp0OentXj3xA0vXrpY59Ohhkk4XoNxAHP414&#43;3iWTxlazw&#43;IbKRmmPMjxHbkdPwqvF4l1K2he1N9LPG44Ry5x&#43;VJXFzNH&#43;xyNuXc1&#43;9f1r0nWfiN4f0q0Y3l0HaFTkpgjp7CvAfhtbL4W8N&#43;IvFV0cIVmmBPXgsBivnibULzxXfT6/4jhb7NK4aNNuFIFYVMVGJrTwrm/Q99&#43;MXivT/ABVa2V5Y3SRzRMQ4zg46djWP4w8M&#43;IPFOn&#43;FLSSGGBZCHlBBPCYOK&#43;UNBury28T297JKzWwZ1iBOQhzXe/FD4oahb&#43;IbK2RpF8uKPex/2VAxSdVJXRCwrk7I&#43;u/g14QgsNBurC4i824k3BjJnnivomC1sdOgjtNKt0tYEH3VAGa/PH4K&#43;LHN9OqsVBbzHOP&#43;mh4r7l8HXdvqNmt2jhWOMKSPWu&#43;liYykeTXw0oSudG&#43;oXZO2NCPrWbqF5cLGsTv8zDJB9K6eKAJ82Bn0p1xFHNGQnHJ5HFdnMeaqL2PEfDfgzV9c8YS&#43;L9QT7FbhtkOzqK7rxVpMOnWkscMLHK&#43;vakuNW03S42iklSJF5G7&#43;deCePPizq8T/2fo6GWKYbRJyeh44Aqr81tCXaK1Z3WoXN5YeENZ8RPCRb2kEhHrwCRzX5pfBLxJ4t1X4oa&#43;ni5UjmhKxxKF2&#43;WreZuX&#43;XWv008V&#43;PLay8Datp&#43;r5WW7QIq9Ru49K/NT4c&#43;EPFM/jKPxTHp0pgs4ygBwCVbOfyqqdPm0Oesmpao/cHw/cO0Y&#43;YZH516XoMoiVU71&#43;Y3hf40694T1q00ywcPpMXnCQMCCrEgfzr9DvCXjLwz4t0WHWtFvopkkAYqjfMAfXFenlzjGqkz5LiGlUlRbSPoq2vYruyjuoRhW6g1hLPHpmqyy3PEEoyh9&#43;xriD4n0LRrwHX7yKwjboZWAB/GrjahpWuQsLO9iuFXsrA8&#43;9fRqSe5&#43;f8AKyxqvijSItJuWt9UiYiNtu2QHJr8d/jl&#43;0bqnw&#43;8YjwXbv9qhkdg&#43;4HajrgAV92/FvRNY8JaLeazBqdqs1vEXVllGCR3r8UfGlxrPiDxFe6lrIJnkY8bNvc1FWfL&#43;J04WhzSbkj7a8L/ABN1LxVothqEUi21ldBXjBBOUYZFc18S&#43;P7Mj0uOMhInYnI&#43;7ya/Pv4W6&#43;NW8MxFbtoFgXY2Ox98V9Oa34mXxtp9ppa6cLixjbMsp6bh2H4V59bM4rY9WhgJy3PQ/D/wDYniPw/p/iXW45pb28tlkt4iylXbGQp9CDxX0e&#43;lrpx&#43;2MuSvXP8AhXzl4E8MeKWmhS28R20lrGwURtbdR2GQefSvsLTNBisrAKJvtLMoBc9SccmvIxMlKz7H0GEi46I4u2trm&amp;#43;0QWFzHG8CfxEgfUV8xfG3RvDekeGPE7aldFJ73RLtY/M&#43;6xMZAz&#43;NfSMt7PcRmPzB5yjge/tXgv7RGk2Y&#43;H&#43;s6xdgbrOxmYH0JUmvPxVJShKzPdwFS0kz8PP2LNb&#43;FWi6hrJ8UOF1WKQKGB6LkV&#43;gknjvwJAhVbzf9Y2/nX5TfslWlpq3iCW&#43;mgQusYC8Adm9K&#43;47DwJp97aRO0sYLpzzX5ListzBVuaJ/QOX5rhHR5Kj1/wAj0q18WaJf&#43;GWvtLnW4ify&#43;5AB|  9pD19a/Jn4rftE&#43;PtH1LUfDtnMbbcWQ44wCeP0r9PPBXg6w8P6CdPdkkkBByGr8dv2n/hwdJ8Vy&#43;JU3KZSWI9Mmvp&#43;HKZQ&#43;E/POK82lOnyQ23P0k/Z3&#43;O11c6dFpPjy4eTfGFjd&#43;uR&#43;Ar7NtNUttStIb20cPFIMqw9K/mT8OeIda0bULa8&#43;1SqoI3AHGOetfp7&#43;yj8Xtd8S&#43;LJtC12dxaHd5RI4yOD1rwuN&#43;FoNupTR9hwHxrUhJUaz/w6n6hUUUV8GfrYUUUUAFFFFABRRRQAUUUUAFFFFABRRRQB/9k=';
+
+// Legs SVG placeholder (will be replaced when image is uploaded)
+const IMG_LEGS = null;
+
+// Map schedule day index to image
+const DAY_IMAGES = { 0: IMG_CHEST, 1: IMG_LEGS, 3: IMG_BICEPS };
 
 const PROGRAM_START = (() => {
   const saved = localStorage.getItem('programStart');
@@ -787,6 +842,13 @@ function getProgramDay() {
   return Math.max(0, Math.min(diff, 55));
 }
 
+// Returns the SCHEDULE index (0=Mon … 6=Sun) for the real current day of week.
+// JS getDay(): 0=Sun,1=Mon,...,6=Sat → we map to Mon-first: Mon=0,Tue=1,...,Sun=6
+function getTodayScheduleIndex() {
+  const jsDay = TODAY.getDay(); // 0=Sun … 6=Sat
+  return (jsDay + 6) % 7;      // Mon=0, Tue=1, Wed=2, Thu=3, Fri=4, Sat=5, Sun=6
+}
+
 const QUOTES = [
   "You don't find willpower. You create discipline.",
   "Discipline today. Results tomorrow.",
@@ -801,7 +863,7 @@ const QUOTES = [
 // 7-day weekly schedule (repeating)
 const SCHEDULE = [
   {
-    day: 'MON', name: 'UPPER', sub: 'CHEST / SHOULDERS', icon: '🏋️',
+    day: 'MON', name: 'UPPER', sub: 'CHEST / SHOULDERS', icon: '🫸',
     type: 'lift',
     warmup: true,
     sections: [
@@ -840,7 +902,7 @@ const SCHEDULE = [
     ]
   },
   {
-    day: 'TUE', name: 'LOWER', sub: 'LEGS', icon: '🦵',
+    day: 'TUE', name: 'LOWER', sub: 'LEGS', icon: '🦶',
     type: 'lift',
     warmup: true,
     sections: [
@@ -1038,15 +1100,15 @@ function getCompletedCount() {
 function renderToday() {
   const progDay = getProgramDay();
   const weekNum = Math.floor(progDay / 7) + 1;
-  const dayInWeek = progDay % 7;
-  const sched = SCHEDULE[dayInWeek];
+  const schedIdx = getTodayScheduleIndex(); // always matches real day of week
+  const sched = SCHEDULE[schedIdx];
   const dayData = getDayData(progDay);
 
   document.getElementById('hdr-week').textContent = weekNum;
   document.getElementById('hdr-day').textContent = progDay + 1;
   document.getElementById('hdr-streak').textContent = getStreak();
 
-  document.getElementById('today-week-label').textContent = `WEEK ${weekNum} — DAY ${progDay + 1}`;
+  document.getElementById('today-week-label').textContent = `WEEK ${weekNum} — ${sched.day}`;
   document.getElementById('today-title').textContent = sched.name;
   document.getElementById('today-subtitle').textContent = sched.sub;
 
@@ -1054,15 +1116,16 @@ function renderToday() {
   const q = QUOTES[progDay % QUOTES.length];
   document.getElementById('daily-quote').textContent = `"${q}"`;
 
-  // Week dots
+  // Week dots — based on real day of week
   const dotsEl = document.getElementById('week-progress-dots');
   dotsEl.innerHTML = '';
   for (let i = 0; i < 7; i++) {
     const dot = document.createElement('div');
     dot.className = 'week-dot';
-    const dd = getDayData(Math.floor(progDay / 7) * 7 + i);
-    if (i < dayInWeek && dd.completed) dot.classList.add('done');
-    else if (i === dayInWeek) dot.classList.add('today');
+    const dayIdx = Math.floor(progDay / 7) * 7 + i;
+    const dd = getDayData(dayIdx);
+    if (i < schedIdx && dd.completed) dot.classList.add('done');
+    else if (i === schedIdx) dot.classList.add('today');
     dotsEl.appendChild(dot);
   }
 
@@ -1102,7 +1165,7 @@ function renderToday() {
       const done = dayData.checks && dayData.checks[checkIdx];
       ul.appendChild(makeCheckItem(ex.name, ex.sets, sectionTag(sec.title), done, () => {
         toggleCheck(progDay, checkIdx, allChecks.length);
-      }));
+      }, checkIdx, progDay, allChecks.length));
     });
     card.appendChild(ul);
     content.appendChild(card);
@@ -1120,7 +1183,7 @@ function renderToday() {
     const done = dayData.checks && dayData.checks[checkIdx];
     nul.appendChild(makeCheckItem(n, '', 'nutrition', done, () => {
       toggleCheck(progDay, checkIdx, allChecks.length);
-    }));
+    }, checkIdx, progDay, allChecks.length));
   });
   nc.appendChild(nul);
   content.appendChild(nc);
@@ -1179,18 +1242,106 @@ function sectionIcon(title) {
   return '💪';
 }
 
-function makeCheckItem(label, sub, tag, done, onclick) {
+// Parse number of sets from a string like "3 × 12", "4 × MAX", "3 × 60 sec"
+// Returns null if it's not a multi-set exercise (e.g. "10–15 min", "1 session")
+function parseSets(setsStr) {
+  if (!setsStr) return null;
+  const m = setsStr.match(/^(\d+)\s*[x×]/i);
+  if (!m) return null;
+  const n = parseInt(m[1]);
+  return n > 1 ? n : null;
+}
+
+function getSetChecks(dayIdx, checkIdx) {
+  const dd = getDayData(dayIdx);
+  return dd.setChecks || {};
+}
+
+function toggleSetCheck(dayIdx, checkIdx, setIdx, numSets, totalChecks, onAllDone, dotEl, liEl) {
+  const dd = getDayData(dayIdx);
+  if (!dd.setChecks) dd.setChecks = {};
+  const key = String(checkIdx);
+  if (!dd.setChecks[key]) dd.setChecks[key] = new Array(numSets).fill(false);
+  dd.setChecks[key][setIdx] = !dd.setChecks[key][setIdx];
+
+  const allDone = dd.setChecks[key].every(Boolean);
+
+  if (!dd.checks) dd.checks = new Array(totalChecks).fill(false);
+  while (dd.checks.length < totalChecks) dd.checks.push(false);
+  dd.checks[checkIdx] = allDone;
+
+  setDayData(dayIdx, dd);
+
+  // Update just this dot in place — no full re-render
+  const isDotDone = dd.setChecks[key][setIdx];
+  dotEl.classList.toggle('set-done', isDotDone);
+  dotEl.textContent = isDotDone ? '✓' : String(setIdx + 1);
+
+  if (allDone) {
+    // All sets complete — cross out the row and trigger progress update
+    liEl.classList.add('done');
+    liEl.querySelector('.check-box').textContent = '✓';
+    onAllDone();
+  } else {
+    // Un-completing: remove done state if a dot was unticked
+    liEl.classList.remove('done');
+    liEl.querySelector('.check-box').textContent = '';
+  }
+}
+
+function makeCheckItem(label, sub, tag, done, onclick, checkIdx, dayIdx, totalChecks) {
+  const numSets = parseSets(sub);
   const li = document.createElement('li');
-  li.className = done ? 'done' : '';
-  li.innerHTML = `
-    <div class="check-box">${done ? '✓' : ''}</div>
-    <div class="check-text">
-      <div class="check-label">${label}</div>
-      ${sub ? `<div class="check-sub">${sub}</div>` : ''}
-    </div>
-    <div class="check-tag tag-${tag}">${tag.toUpperCase()}</div>
-  `;
-  li.onclick = onclick;
+
+  if (numSets) {
+    const dd = getDayData(dayIdx);
+    // Always start fresh if no saved set data — never inherit from done flag
+    const saved = dd.setChecks && dd.setChecks[String(checkIdx)];
+    const setChecks = (saved && saved.length === numSets)
+      ? saved
+      : new Array(numSets).fill(false);
+    const allDone = setChecks.every(Boolean);
+
+    li.className = allDone ? 'done' : '';
+    li.style.cursor = 'default';
+
+    li.innerHTML = `
+      <div class="check-box" style="margin-top:6px">${allDone ? '✓' : ''}</div>
+      <div class="check-text" style="flex:1">
+        <div class="check-label">${label}</div>
+        <div class="check-sub">${sub}</div>
+        <div class="set-dots">
+          ${setChecks.map((s, i) => `
+            <div class="set-dot${s ? ' set-done' : ''}" data-set="${i}">
+              ${s ? '✓' : (i + 1)}
+            </div>
+          `).join('')}
+        </div>
+      </div>
+      <div class="check-tag tag-${tag}">${tag.toUpperCase()}</div>
+    `;
+
+    li.querySelectorAll('.set-dot').forEach(dot => {
+      dot.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const si = parseInt(dot.dataset.set);
+        toggleSetCheck(dayIdx, checkIdx, si, numSets, totalChecks, onclick, dot, li);
+      });
+    });
+
+  } else {
+    li.className = done ? 'done' : '';
+    li.innerHTML = `
+      <div class="check-box">${done ? '✓' : ''}</div>
+      <div class="check-text">
+        <div class="check-label">${label}</div>
+        ${sub ? `<div class="check-sub">${sub}</div>` : ''}
+      </div>
+      <div class="check-tag tag-${tag}">${tag.toUpperCase()}</div>
+    `;
+    li.onclick = onclick;
+  }
+
   return li;
 }
 
@@ -1247,19 +1398,23 @@ function renderProgress() {
       if (dayIdx === progDay) cell.classList.add('today-cell');
       if (dayIdx > progDay) cell.classList.add('future');
       if (dd.completed) cell.classList.add('completed');
+      const dayImg = DAY_IMAGES[d];
+      const iconContent = dd.completed
+        ? '✅'
+        : (dayIdx === progDay ? '👊' : (dayImg
+            ? `<img src="${dayImg}" style="width:36px;height:36px;object-fit:cover;border-radius:4px;opacity:${dayIdx > progDay ? 0.5 : 1}">`
+            : sched.icon));
       cell.innerHTML = `
         <div class="wc-day">${sched.day}</div>
-        <div class="wc-icon">${dd.completed ? '✅' : (dayIdx === progDay ? '👊' : sched.icon)}</div>
+        <div class="wc-icon" style="line-height:1">${iconContent}</div>
         <div class="wc-type">${sched.type === 'lift' ? 'LIFT' : sched.type === 'cardio' ? 'RUN' : sched.type === 'recovery' ? 'ACTV' : 'REST'}</div>
       `;
-      if (dayIdx <= progDay) {
-        cell.style.cursor = 'pointer';
-        cell.addEventListener('click', () => {
-          document.querySelectorAll('.week-cell.selected').forEach(c => c.classList.remove('selected'));
-          cell.classList.add('selected');
-          renderDayDetail(dayIdx);
-        });
-      }
+      cell.style.cursor = 'pointer';
+      cell.addEventListener('click', () => {
+        document.querySelectorAll('.week-cell.selected').forEach(c => c.classList.remove('selected'));
+        cell.classList.add('selected');
+        renderDayDetail(dayIdx, true);
+      });
       grid.appendChild(cell);
     }
     cal.appendChild(grid);
@@ -1295,7 +1450,7 @@ function renderProgress() {
 // DAY DETAIL (Progress page drill-down)
 // ══════════════════════════════════════
 
-function renderDayDetail(dayIdx) {
+function renderDayDetail(dayIdx, doScroll = false) {
   const panel = document.getElementById('day-detail-panel');
   panel.style.display = 'block';
   panel.innerHTML = '';
@@ -1306,9 +1461,10 @@ function renderDayDetail(dayIdx) {
   const dayData = getDayData(dayIdx);
   const progDay = getProgramDay();
   const isToday = dayIdx === progDay;
+  const isFuture = dayIdx > progDay;
 
-  // Scroll panel into view smoothly
-  setTimeout(() => panel.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
+  // Scroll panel into view smoothly only on first open
+  if (doScroll) setTimeout(() => panel.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
 
   // Header card
   const header = document.createElement('div');
@@ -1317,7 +1473,7 @@ function renderDayDetail(dayIdx) {
     <div class="day-detail-header">
       <div>
         <div style="font-family:var(--font-display);font-size:12px;letter-spacing:2px;color:var(--accent);text-transform:uppercase;margin-bottom:4px">
-          Week ${weekNum} — Day ${dayIdx + 1}${isToday ? ' (Today)' : ''}
+          Week ${weekNum} — Day ${dayIdx + 1}${isToday ? ' (Today)' : isFuture ? ' (Upcoming)' : ''}
         </div>
         <div style="font-family:var(--font-display);font-size:28px;font-weight:900;letter-spacing:2px;text-transform:uppercase;line-height:1">${sched.name}</div>
         <div style="font-size:13px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-top:4px">${sched.sub}</div>
@@ -1344,71 +1500,100 @@ function renderDayDetail(dayIdx) {
     const card = document.createElement('div');
     card.className = 'card';
     card.innerHTML = `<div class="card-title"><span class="icon">${sectionIcon(sec.title)}</span>${sec.title}</div>`;
-    const ul = document.createElement('ul');
-    ul.className = 'checklist';
-    sec.exercises.forEach((ex, ei) => {
-      const checkIdx = flattenIdx(sched, si, ei);
-      const done = dayData.checks && dayData.checks[checkIdx];
-      ul.appendChild(makeCheckItem(ex.name, ex.sets, sectionTag(sec.title), done, () => {
-        toggleCheckAndRefreshDetail(dayIdx, checkIdx, totalChecks);
-      }));
-    });
-    card.appendChild(ul);
+
+    if (isFuture) {
+      // View-only list for future days
+      const ul = document.createElement('ul');
+      ul.className = 'checklist';
+      sec.exercises.forEach(ex => {
+        const li = document.createElement('li');
+        li.style.cursor = 'default';
+        li.innerHTML = `
+          <div class="check-box" style="border-color:var(--border);opacity:0.4"></div>
+          <div class="check-text">
+            <div class="check-label">${ex.name}</div>
+            ${ex.sets ? `<div class="check-sub">${ex.sets}</div>` : ''}
+          </div>
+          <div class="check-tag tag-${sectionTag(sec.title)}">${sectionTag(sec.title).toUpperCase()}</div>
+        `;
+        ul.appendChild(li);
+      });
+      card.appendChild(ul);
+    } else {
+      const ul = document.createElement('ul');
+      ul.className = 'checklist';
+      sec.exercises.forEach((ex, ei) => {
+        const checkIdx = flattenIdx(sched, si, ei);
+        const done = dayData.checks && dayData.checks[checkIdx];
+        ul.appendChild(makeCheckItem(ex.name, ex.sets, sectionTag(sec.title), done, () => {
+          toggleCheckAndRefreshDetail(dayIdx, checkIdx, totalChecks);
+        }, checkIdx, dayIdx, totalChecks));
+      });
+      card.appendChild(ul);
+    }
     panel.appendChild(card);
   });
 
-  // Nutrition checklist
-  const nc = document.createElement('div');
-  nc.className = 'card';
-  nc.innerHTML = `<div class="card-title"><span class="icon">🥗</span>Daily Nutrition</div>`;
-  const nul = document.createElement('ul');
-  nul.className = 'checklist';
-  NUTRITION_CHECKS.forEach((n, ni) => {
-    const checkIdx = exOffset + ni;
-    const done = dayData.checks && dayData.checks[checkIdx];
-    nul.appendChild(makeCheckItem(n, '', 'nutrition', done, () => {
-      toggleCheckAndRefreshDetail(dayIdx, checkIdx, totalChecks);
-    }));
-  });
-  nc.appendChild(nul);
-  panel.appendChild(nc);
-
-  // Progress bar
-  const doneChecks = (dayData.checks || []).filter(Boolean).length;
-  const pct = totalChecks > 0 ? Math.round(doneChecks / totalChecks * 100) : 0;
-  const pb = document.createElement('div');
-  pb.className = 'card';
-  pb.innerHTML = `
-    <div style="display:flex;justify-content:space-between;margin-bottom:8px">
-      <span style="font-family:var(--font-display);font-size:14px;letter-spacing:1px;color:var(--muted);text-transform:uppercase">Day Progress</span>
-      <span style="font-family:var(--font-display);font-size:16px;font-weight:700;color:var(--accent)">${pct}%</span>
-    </div>
-    <div class="prog-bar-wrap"><div class="prog-bar" style="width:${pct}%"></div></div>
-    <div style="font-size:13px;color:var(--muted);margin-top:8px">${doneChecks} / ${totalChecks} tasks completed</div>
-  `;
-  panel.appendChild(pb);
-
-  // Mark complete button
-  const btn = document.createElement('button');
-  btn.className = 'complete-btn' + (dayData.completed ? ' done-day' : '');
-  btn.textContent = dayData.completed ? '✅ Day Completed!' : 'Mark Day Complete';
-  if (!dayData.completed) {
-    btn.onclick = () => {
-      const dd2 = getDayData(dayIdx);
-      dd2.completed = true;
-      setDayData(dayIdx, dd2);
-      showToast('🔥 DAY COMPLETE! BEAST MODE!');
-      renderDayDetail(dayIdx);
-      renderProgress();
-      if (isToday) renderToday();
-    };
+  // Nutrition checklist (past/today only)
+  if (!isFuture) {
+    const nc = document.createElement('div');
+    nc.className = 'card';
+    nc.innerHTML = `<div class="card-title"><span class="icon">🥗</span>Daily Nutrition</div>`;
+    const nul = document.createElement('ul');
+    nul.className = 'checklist';
+    NUTRITION_CHECKS.forEach((n, ni) => {
+      const checkIdx = exOffset + ni;
+      const done = dayData.checks && dayData.checks[checkIdx];
+      nul.appendChild(makeCheckItem(n, '', 'nutrition', done, () => {
+        toggleCheckAndRefreshDetail(dayIdx, checkIdx, totalChecks);
+      }, checkIdx, dayIdx, totalChecks));
+    });
+    nc.appendChild(nul);
+    panel.appendChild(nc);
   }
-  panel.appendChild(btn);
+
+  // Progress bar (past/today only)
+  if (!isFuture) {
+    const doneChecks = (dayData.checks || []).filter(Boolean).length;
+    const pct = totalChecks > 0 ? Math.round(doneChecks / totalChecks * 100) : 0;
+    const pb = document.createElement('div');
+    pb.className = 'card';
+    pb.innerHTML = `
+      <div style="display:flex;justify-content:space-between;margin-bottom:8px">
+        <span style="font-family:var(--font-display);font-size:14px;letter-spacing:1px;color:var(--muted);text-transform:uppercase">Day Progress</span>
+        <span style="font-family:var(--font-display);font-size:16px;font-weight:700;color:var(--accent)">${pct}%</span>
+      </div>
+      <div class="prog-bar-wrap"><div class="prog-bar" style="width:${pct}%"></div></div>
+      <div style="font-size:13px;color:var(--muted);margin-top:8px">${doneChecks} / ${totalChecks} tasks completed</div>
+    `;
+    panel.appendChild(pb);
+
+    // Mark complete button
+    const btn = document.createElement('button');
+    btn.className = 'complete-btn' + (dayData.completed ? ' done-day' : '');
+    btn.textContent = dayData.completed ? '✅ Day Completed!' : 'Mark Day Complete';
+    if (!dayData.completed) {
+      btn.onclick = () => {
+        const dd2 = getDayData(dayIdx);
+        dd2.completed = true;
+        setDayData(dayIdx, dd2);
+        showToast('🔥 DAY COMPLETE! BEAST MODE!');
+        renderDayDetail(dayIdx);
+        renderProgress();
+        if (isToday) renderToday();
+      };
+    }
+    panel.appendChild(btn);
+  }
 }
 
 function toggleCheckAndRefreshDetail(dayIdx, checkIdx, total) {
   toggleCheck(dayIdx, checkIdx, total);
+  // Save scroll position so panel doesn't jump back to top
+  const panel = document.getElementById('day-detail-panel');
+  const scrollY = window.scrollY;
   renderDayDetail(dayIdx);
+  window.scrollTo({ top: scrollY });
   renderProgress();
 }
 
@@ -1425,25 +1610,24 @@ function closeDayDetail() {
 
 let activeWorkoutTab = 0;
 
+// Only show days that have actual gym workouts
+const WORKOUT_DAYS = SCHEDULE.map((s, i) => ({ ...s, idx: i }))
+  .filter(s => s.type === 'lift' || s.type === 'recovery');
+
 function renderWorkouts() {
   const tabs = document.getElementById('workout-tabs');
   tabs.innerHTML = '';
-  SCHEDULE.forEach((s, i) => {
+  WORKOUT_DAYS.forEach((s, i) => {
     const btn = document.createElement('button');
     btn.className = 'day-tab' + (i === activeWorkoutTab ? ' active' : '');
-    btn.textContent = s.day;
+    btn.textContent = ['Upper', 'Lower', 'Stretch', 'Biceps'][i];
     btn.onclick = () => { activeWorkoutTab = i; renderWorkouts(); };
     tabs.appendChild(btn);
   });
 
   const detail = document.getElementById('workout-detail');
-  const s = SCHEDULE[activeWorkoutTab];
+  const s = WORKOUT_DAYS[activeWorkoutTab];
   detail.innerHTML = `<div class="card-title"><span class="icon">${s.icon}</span>${s.name} — ${s.sub}</div>`;
-
-  if (s.type === 'rest') {
-    detail.innerHTML += `<div style="text-align:center;padding:30px;color:var(--muted)">Full rest. Recover and recharge.</div>`;
-    return;
-  }
 
   s.sections.forEach(sec => {
     const sh = document.createElement('div');
@@ -1454,7 +1638,7 @@ function renderWorkouts() {
       const row = document.createElement('div');
       row.className = 'exercise-row';
       const videoBtn = ex.video
-        ? `<a href="${ex.video}" target="_blank" rel="noopener" class="video-link" title="Watch how-to video" onclick="event.stopPropagation()">▶ HOW TO</a>`
+        ? `<a href="${ex.video}" target="_blank" rel="noopener" class="video-link" title="Watch how-to video">▶ HOW TO</a>`
         : '';
       row.innerHTML = `
         <div class="ex-num">${String(i+1).padStart(2,'0')}</div>
@@ -1518,6 +1702,27 @@ function showToast(msg) {
 // ══════════════════════════════════════
 // INIT
 // ══════════════════════════════════════
+
+// Clear any corrupted setChecks from localStorage
+(function cleanState() {
+  const state = getState();
+  let changed = false;
+  Object.keys(state).forEach(dateKey => {
+    const day = state[dateKey];
+    if (day.setChecks) {
+      // Reset any setChecks entry that is fully true but shouldn't be
+      // (only keep setChecks that have at least one false — i.e. partial progress)
+      // If all true, the main checks[] flag handles it correctly
+      Object.keys(day.setChecks).forEach(k => {
+        if (!Array.isArray(day.setChecks[k])) {
+          delete day.setChecks[k];
+          changed = true;
+        }
+      });
+    }
+  });
+  if (changed) saveState(state);
+})();
 
 renderToday();
 renderProgress();
